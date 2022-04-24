@@ -22,7 +22,7 @@ console.log(myVideo)
 		<div className="container">
 			<div className="video-container">
 				<div className="video">
-					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
+				<video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />
 				</div>
 			</div>
 		</div>
