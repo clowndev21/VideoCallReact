@@ -5,12 +5,12 @@ function App() {
 	const [ stream, setStream ] = useState()
 	const myVideo = useRef()
   console.log(navigator)
-	// useEffect(() => {
-	// 	navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
-	// 		setStream(stream)
-	// 			myVideo.current.srcObject = stream
-	// 	})
-	// },[])
+	useEffect(() => {
+		navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
+			setStream(stream)
+				myVideo.current.srcObject = stream
+		})
+	},[])
 
 
 
