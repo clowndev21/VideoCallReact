@@ -4,14 +4,15 @@ import "./App.css"
 function App() {
 	const [ stream, setStream ] = useState()
 	const myVideo = useRef()
-  console.log(navigator)
+
 	useEffect(() => {
+    console.log(navigator)
 		navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
 			setStream(stream)
 				myVideo.current.srcObject = stream
 		})
 	},[])
-
+console.log(stream)
 
 
 	return (
