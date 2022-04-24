@@ -3,7 +3,7 @@ import "./App.css"
 
 function App() {
 	const [ stream, setStream ] = useState()
-	const myVideo = useRef()
+	let myVideo = useRef()
 
 	useEffect(() => {
     console.log(navigator)
@@ -22,7 +22,7 @@ console.log(myVideo)
 		<div className="container">
 			<div className="video-container">
 				<div className="video">
-					{stream &&  <video playsInline ref={myVideo} autoPlay style={{ width: "300px" }} />}
+					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
 				</div>
 			</div>
 		</div>
