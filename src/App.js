@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef, useState } from "react"
+import "./App.css"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [ stream, setStream ] = useState()
+	const myVideo = useRef()
+  console.log(navigator)
+	// useEffect(() => {
+	// 	navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
+	// 		setStream(stream)
+	// 			myVideo.current.srcObject = stream
+	// 	})
+	// },[])
+
+
+
+	return (
+		<>
+			<h1 style={{ textAlign: "center", color: '#fff' }}>Zoomish</h1>
+		<div className="container">
+			<div className="video-container">
+				<div className="video">
+					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
+				</div>
+			</div>
+		</div>
+		</>
+	)
 }
 
-export default App;
+export default App
